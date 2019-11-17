@@ -1,0 +1,14 @@
+.style1 { width: 100%;}
+        
+.top { background-color: Yellow; color: BLue; }
+
+.bb {
+    background-color: Blue;
+    color: White;
+}
+.ts {
+    text-align: center;
+    font-weight: bold;
+}
+
+table tr td { border: 1px solid black; }
