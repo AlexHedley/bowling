@@ -1,10 +1,34 @@
-# https://github.com/Protirus/OneMinuteWith/blob/master/scripts/AppendInterview.ps1
+<#
+.SYNOPSIS
+  Add a Bowling Score to the list.
+.DESCRIPTION
+  Add a Bowling Score to the list.
+.PARAMETER <>
+    The x of the .
+.INPUTS
+  <Inputs if any, otherwise state None>
+.OUTPUTS
+  <Outputs if any, otherwise state None - example: Log file stored in C:\Windows\Temp\<name>.log>
+.NOTES
+  Version:        0.0.1
+  Author:         Alex Hedley
+  Creation Date:  17/11/2019
+  Release Date:   dd/mm/yyyy
+  Purpose/Change: Initial script release
+  
+.EXAMPLE
+  Call '' to
+  # https://github.com/Protirus/OneMinuteWith/blob/master/scripts/AppendInterview.ps1
+.FUNCTIONALITY
+   Add a Bowling Score to the list.
+#>
+
 
 #---Variables---#
 
 #region Variables
 
-$jsonFileName = "interviews.json"
+$jsonFileName = "../docs/data/scores.json"
 
 #endregion
 
@@ -15,15 +39,23 @@ $jsonFileName = "interviews.json"
 
 Function GetJsonFilePath
 {
+    <#
+    #.PARAMETER Id
+    #    The Id number of the Accessory
+    
+    .EXAMPLE
+        GetJsonFilePath
+    #>
+
     $path = $PSScriptRoot
 
     $currentDir = Get-Item -Path $path
 
     $parent = $currentDir.parent;
 
-    $interviews = Join-Path -Path $parent.FullName -ChildPath "interviews"
+    $scores = Join-Path -Path $parent.FullName -ChildPath "scores"
 
-    $jsonPath = Join-Path -Path $interviews -ChildPath $jsonFileName
+    $jsonPath = Join-Path -Path $scores -ChildPath $jsonFileName
 
     $exists = Test-Path -Path $jsonPath
 
@@ -37,6 +69,14 @@ Function GetJsonFilePath
 
 Function ParseAndValidateJson($filePath)
 {
+    <#
+    .PARAMETER filePath
+        The json file to validate
+    
+    .EXAMPLE
+        ParseAndValidateJson -filePath "c:\temp\scores.json"
+    #>
+
     [hashtable]$Return = @{} 
     $Return.Success = 0
     $Return.Data = {}
@@ -47,7 +87,7 @@ Function ParseAndValidateJson($filePath)
     #if ($fileContents -eq $null)
     if ($null -eq $fileContents)
     {
-        $ErrorReason = "Interviews is empty"
+        $ErrorReason = "Scores is empty"
         Write-Host $ErrorReason
 
         $Return.Success = $false
@@ -80,99 +120,117 @@ Function ParseAndValidateJson($filePath)
     return $Return
 }
 
-Function InputInterview
+Function InputScore
 {
-    Write-Host "--Add Interview Record--"
-
-    Write-Host "Please Enter The Employee's First Name"
-    $inputFirstName = Read-Host
-
-    Write-Host "Please Enter The Employee's Last Name"
-    $inputLastName = Read-Host
-
-    Write-Host "Please Enter The Employee's Role"
-    $inputRole = Read-Host
-
-    Write-Host "Please Enter A Short Description Of The Employee"
-    $inputShortDescription = Read-Host
-
-    Write-Host "Please Enter The GitHub Interview Url"
-    Write-Host -ForegroundColor DarkYellow "aka https://github.com/Protirus/OneMinuteWith/blob/master/interviews/ProtirusEmployee.md"
-    $inputInterviewUrl = Read-Host
-    $inputFileName = Split-Path $inputInterviewUrl -Leaf
-
-    Write-Host "Please Enter The Thumbnail Employee Picture Url"
-    Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
-    $inputThumbnailImageUrl = Read-Host
-
-    Write-Host "Please Enter The Formal Employee Picture Url"
-    Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
-    $inputFormalImageUrl = Read-Host
+    <#
+    #.PARAMETER 
+    #    The json file to validate
     
-    Write-Host "Please Enter The Informal (Fun) Employee Picture Url"
-    Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
-    $inputInformalImageUrl = Read-Host
+    .EXAMPLE
+        InputScore
+    #>
 
-    Write-Host "Please Enter The Date Of The Interview (dd/MM/yyyy)"
-    $inputInterviewDate = Read-Host
+    #Write-Host "--Add Score Record--"
 
-    $inputInterview = New-Object -TypeName psobject
+    #Write-Host "Please Enter The Employee's First Name"
+    #$inputFirstName = Read-Host
 
-    $inputName = New-Object -TypeName psobject
-    $inputName | Add-Member -MemberType NoteProperty -Name firstName -Value $inputFirstName
-    $inputName | Add-Member -MemberType NoteProperty -Name lastName -Value $inputLastName
-    $inputName | Add-Member -MemberType NoteProperty -Name fullName -Value "$inputFirstName $inputLastName"
+    #Write-Host "Please Enter The Employee's Last Name"
+    #$inputLastName = Read-Host
 
-    $inputInterview | Add-Member -MemberType NoteProperty -Name employeeName -Value $inputName
-    #$inputInterview | Add-Member -MemberType NoteProperty -Name employeeName -Value "$inputFirstName $inputLastName"
-    $inputInterview | Add-Member -MemberType NoteProperty -Name employeeRole -Value $inputRole
-    $inputInterview | Add-Member -MemberType NoteProperty -Name shortDescription -Value $inputShortDescription
-    $inputInterview | Add-Member -MemberType NoteProperty -Name interviewUrl -Value $inputInterviewUrl
-    $inputInterview | Add-Member -MemberType NoteProperty -Name fileName -Value $inputFileName
-    $inputInterview | Add-Member -MemberType NoteProperty -Name thumbnailImageUrl -Value $inputThumbnailImageUrl
-    $inputInterview | Add-Member -MemberType NoteProperty -Name formalImageUrl -Value $inputFormalImageUrl
-    $inputInterview | Add-Member -MemberType NoteProperty -Name informalImageUrl -Value $inputInformalImageUrl
-    $inputInterview | Add-Member -MemberType NoteProperty -Name interviewDate -Value $inputInterviewDate
+    #Write-Host "Please Enter The Employee's Role"
+    #$inputRole = Read-Host
 
-    Write-Host "New One Minute With interview record:"
-    Write-Host ($inputInterview | Format-List | Out-String)
+    #Write-Host "Please Enter A Short Description Of The Employee"
+    #$inputShortDescription = Read-Host
+
+    #Write-Host "Please Enter The GitHub Interview Url"
+    #Write-Host -ForegroundColor DarkYellow "aka https://github.com/Protirus/OneMinuteWith/blob/master/scores/ProtirusEmployee.md"
+    #$inputInterviewUrl = Read-Host
+    #$inputFileName = Split-Path $inputInterviewUrl -Leaf
+
+    #Write-Host "Please Enter The Thumbnail Employee Picture Url"
+    #Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
+    #$inputThumbnailImageUrl = Read-Host
+
+    #Write-Host "Please Enter The Formal Employee Picture Url"
+    #Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
+    #$inputFormalImageUrl = Read-Host
+    
+    #Write-Host "Please Enter The Informal (Fun) Employee Picture Url"
+    #$inputInformalImageUrl = Read-Host
+    #Write-Host -ForegroundColor DarkYellow "aka https://avatars2.githubusercontent.com/u/33064621?s=460&v=4"
+
+    #Write-Host "Please Enter The Date Of The Score (dd/MM/yyyy)"
+    #$inputInterviewDate = Read-Host
+
+    #$inputScore = New-Object -TypeName psobject
+
+    #$inputName = New-Object -TypeName psobject
+    #$inputName | Add-Member -MemberType NoteProperty -Name firstName -Value $inputFirstName
+    #$inputName | Add-Member -MemberType NoteProperty -Name lastName -Value $inputLastName
+    #$inputName | Add-Member -MemberType NoteProperty -Name fullName -Value "$inputFirstName $inputLastName"
+
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name employeeName -Value $inputName
+    ##$inputInterview | Add-Member -MemberType NoteProperty -Name employeeName -Value "$inputFirstName $inputLastName"
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name employeeRole -Value $inputRole
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name shortDescription -Value $inputShortDescription
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name interviewUrl -Value $inputInterviewUrl
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name thumbnailImageUrl -Value $inputThumbnailImageUrl
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name fileName -Value $inputFileName
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name formalImageUrl -Value $inputFormalImageUrl
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name informalImageUrl -Value $inputInformalImageUrl
+    #$inputInterview | Add-Member -MemberType NoteProperty -Name interviewDate -Value $inputInterviewDate
+
+    Write-Host "New bowling score record:"
+    Write-Host ($inputScore | Format-List | Out-String)
 
     [hashtable]$Return = @{} 
     $Return.Save = $false
-    $Return.Interview = {}
+    $Return.Score = {}
 
-    $saveInterview = {
+    $saveScore = {
 
-        $addRecord = Read-Host -Prompt "Would you like to add this interview record to One Minute View? (Y/N)"
+        $addRecord = Read-Host -Prompt "Would you like to add this Score record to Bowling View? (Y/N)"
 
         If ($addRecord.ToLower() -eq "y")
         {
-            Write-Host "Saving interview"
+            Write-Host "Saving Score"
 
             $Return.Save = $true
-            $Return.Interview = $inputInterview
+            $Return.Score = $inputScore
             return $Return
         }
         Elseif ($addRecord.ToLower() -eq "n")
         {
-            Write-Host "Not saving interview"
+            Write-Host "Not saving score"
             $Return.Save = $false
-            $Return.Interview = $null
+            $Return.Score = $null
             return $Return
         }
         Else
         {
             Write-Host "Please answer Y or N!" -BackgroundColor Red
-            &$saveInterview 
+            &$saveScore 
         }
     }
 
-    &$saveInterview
+    &$saveScore
 }
 
 Function SaveToFile($filePath, [array]$data)
 {
-    $jsonString = ConvertTo-Json @($interviews) | Out-String
+    <#
+    .PARAMETER filePath
+        The json file to save
+    .PARAMETER data
+        The data to add to the file
+
+    .EXAMPLE
+        SaveToFile -filePath "c:\temp\scores.json" -data "..."
+    #>
+
+    $jsonString = ConvertTo-Json @($scores) | Out-String
 
     Out-File -FilePath $filePath -InputObject $jsonString
 }
@@ -185,32 +243,32 @@ Function SaveToFile($filePath, [array]$data)
 
 Clear-Host
 
-$interviewJsonPath = GetJsonFilePath
+$scoresJsonPath = GetJsonFilePath
 
-$parseResult = ParseAndValidateJson($interviewJsonPath)
+$parseResult = ParseAndValidateJson($scoresJsonPath)
 
-[PsObject[]]$interviews = @()
+[PsObject[]]$scores = @()
 
 if ($parseResult.Success -eq $true)
 {
-    #add interview to array
+    #add score to array
 
-    [array]$interviews = $parseResult.Data
+    [array]$scores = $parseResult.Data
 }
 
-$interview = InputInterview
+$score = InputScore
 
-if ($interview.Save)
+if ($score.Save)
 {
-    $interviews += $interview.Interview
+    $scores += $score.Score
 
-    SaveToFile $interviewJsonPath $interviews
+    SaveToFile $scoresJsonPath $scores
 
-    Write-Host -ForegroundColor Green "Updated $interviewJsonPath"
+    Write-Host -ForegroundColor Green "Updated $scoresJsonPath"
 }
 else
 {
-    Write-Host -ForegroundColor Yellow "No changes have been made to $interviewJsonPath"
+    Write-Host -ForegroundColor Yellow "No changes have been made to $scoresJsonPath"
 }
 
 #endregion
