@@ -51,9 +51,21 @@
         <div ng-controller="myController">
 
             <div class="container">
+
+                <div class="row">
+                    <div>
+                        <h2>Stats</h2>
+                        <p>
+                            Max Score: <span>{{maxScore}}</span> | 
+                            Min Score: <span>{{minScore}}</span> | 
+                            Avg Score: <span>{{avgScore | roundTo: 0}}</span>
+                        </p>
+                    </div>
+                </div>
+
                 <div class="row justify-content-md-center">
                     
-                    <table class="bb">
+                    <table id="scoresTable" class="bb">
                         <thead>
                             <tr style="text-align: center">
                                 <th colspan="2">Date</th>
@@ -113,19 +125,6 @@
                         </tbody>
         
                     </table>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <h2>Stats</h2>
-                        <p>
-                            Max Score: <span>{{maxScore}}</span>
-                            <br />
-                            Min Score: <span>{{minScore}}</span>
-                            <br />
-                            Avg Score: <span>{{avgScore | roundTo: 0}}</span>
-                        </p>
-                    </div>
                 </div>
 
             </div>
