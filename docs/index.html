@@ -30,7 +30,11 @@
 
         <section class="jumbotron title-container text-center">
             <div>
-                <h1>Bowling Scores</h1>
+                <h1>
+                    <i class="fas fa-bowling-ball"></i>
+                    Bowling Scores
+                    <i class="fas fa-bowling-pins"></i>
+                </h1>
 
                 <!-- <div class="row justify-content-md-center">
                     <div class="col-lg-8">
@@ -66,9 +70,10 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody ng-repeat="score in scores">
+                        <tbody ng-repeat="score in scores| orderBy:'-id'">
                             <tr class="top">
                                 <td colspan="2" rowspan="2" class="bb">{{score.date | toDate | date:'mediumDate'}}</td>
+                                <!-- <td colspan="2" rowspan="2" class="bb">{{score.date | date:'d MMM yyyy'}}</td> -->
                                 <td>{{score.Score1a}}</td>
                                 <td>{{score.Score1b}}</td>
                                 <td>{{score.Score2a}}</td>

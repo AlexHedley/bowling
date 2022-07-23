@@ -4,7 +4,7 @@
 [![Language: CSS](https://img.shields.io/badge/language-css-purple.svg)](https://www.w3.org/Style/CSS/)
 [![Language: JS](https://img.shields.io/badge/language-javascript-purple.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 |
-[![Tag: lego](https://img.shields.io/badge/tag-bowling-grey.svg)](https://www.hollywoodbowl.co.uk/)
+[![Tag: bowling](https://img.shields.io/badge/tag-bowling-grey.svg)](https://www.hollywoodbowl.co.uk/)
 |
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT) | [![GitHub contributors](https://img.shields.io/github/contributors/AlexHedley/bowling.svg)](https://GitHub.com/AlexHedley/bowling/graphs/contributors/)
 [![GitHub issues](https://img.shields.io/github/issues/AlexHedley/bowling.svg)](https://GitHub.com/AlexHedley/bowling/issues/)
@@ -16,7 +16,12 @@ See my Bowling scores from over the years.
 
 ---
 
+## Run
+
+`py -m http.server`
+
 ## Archives
 
 ### Wayback Machine
+
 - [Aug 2014](https://web.archive.org/web/20140804031231/http://www.alexhedley.com/bowling/)
