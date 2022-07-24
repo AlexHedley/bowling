@@ -5,6 +5,7 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
     $scope.maxScore = 0;
     $scope.minScore = 0;
     $scope.avgScore = 0.0; //=Round(SumScore/NumGames)
+    $scope.count = 0;
 
     $scope.init = function () {
         getData();
@@ -28,6 +29,8 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
             $scope.minScore = min;
             var max = Math.max.apply(Math, $scope.scores.map(function(item){return item.Score10;}));
             $scope.maxScore = max;
+
+            $scope.count = $scope.scores.length;
         });
     };
 

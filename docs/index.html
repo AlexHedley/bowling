@@ -28,7 +28,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
 
-        <section class="jumbotron title-container text-center">
+        <section class="jumbotron title-container text-center" style="background-color:Blue;">
             <div>
                 <h1>
                     <i class="fas fa-bowling-ball"></i>
@@ -58,7 +58,8 @@
                         <p>
                             Max Score: <span>{{maxScore}}</span> | 
                             Min Score: <span>{{minScore}}</span> | 
-                            Avg Score: <span>{{avgScore | roundTo: 0}}</span>
+                            Avg Score: <span>{{avgScore | roundTo: 0}}</span> |
+                            Count #: <span>{{count}}</span>
                         </p>
                     </div>
                 </div>
@@ -132,10 +133,12 @@
         </div>
 
     </main>
+    
+    <br />
 
-    <footer class="footer">
+    <footer class="footer" style="background-color: rgba(0, 0, 255, 1);">
         <div class="container">
-            <span class="text-muted">Alex Hedley.</span>
+            <span class="text-muted" style="color: yellow;"><a href="https://www.alexhedley.com/" target="_blank">Alex Hedley</a>.</span>
         </div>
     </footer>
 

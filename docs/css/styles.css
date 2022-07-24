@@ -1,6 +1,4 @@
-.style1 { width: 100%;}
-        
-.top { background-color: Yellow; color: BLue; }
+.top { background-color: Yellow; color: Blue; }
 
 .bb {
     background-color: Blue;
@@ -12,3 +10,35 @@
 }
 
 table tr td { border: 1px solid black; }
+
+h1 { 
+    color: yellow;
+    -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}
+
+/* h2 { color: white; } */
+
+body { 
+    background-color: Yellow;
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* footer { background-color: rgba(0, 0, 255, 0.3); } */
+
+a:link {
+    background-color: yellow;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+a:visited {
+    background-color: yellow;
+}
+
+a:active {
+    background-color: yellow;
+}
