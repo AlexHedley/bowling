@@ -42,3 +42,8 @@ a:visited {
 a:active {
     background-color: yellow;
 }
+
+.hardSpare { 
+    border-width: 2px;
+    border-color: red;
+}
