@@ -31,7 +31,29 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
             $scope.maxScore = max;
 
             $scope.count = $scope.scores.length;
-        });
+
+            var groupedByYear = _.groupBy(response.data.item, function(item) {
+                var dateMoment = moment(item.date, "DD/MM/YYYY");
+                return dateMoment.year();
+            });
+            $scope.years = groupedByYear;
+
+            // var maxByYear = _.map(groupedByYear, function(item) {
+            //     return _.max(item, 'Score10');
+            // })
+            // $scope.years = maxByYear;
+
+            // var result = _.chain(response.data.item)
+            //     .groupBy(function(el) {
+            //         var dateMoment = moment(el.date, "DD/MM/YYYY");
+            //         return dateMoment.year();
+            //     })
+            //     .map(function(obj) {
+            //         return _.max(obj, 'Score10');
+            //     })
+            //     .value();
+            // $scope.years = result;
+        });   
     };
 
     $scope.init();
@@ -48,6 +70,6 @@ myApp.filter('roundTo', function(numberFilter) {
 
 myApp.filter('toDate', function() {
     return function(items) {
-      return new Date(items);
+        return new Date(items);
     };
-  });
+});
