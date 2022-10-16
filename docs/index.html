@@ -75,6 +75,15 @@
                             </div>
                         </div>
 
+                        <!-- <div class="row"> -->
+                            <!-- <div class="col"> -->
+                                <!-- <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="league" name="league" ng-model='league' value="false">
+                                    <label class="form-check-label">League</label>
+                                </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+
                         <div class="row justify-content-md-center">
                             
                             <table id="scoresTable" class="bb">
@@ -94,7 +103,7 @@
                                         <th>Total</th>
                                     </tr>
                                 </thead>
-                                <tbody ng-repeat="score in scores| orderBy:'-id' | filter:searchText">
+                                <tbody ng-repeat="score in scores| orderBy:'-id' | filter:searchText"> <!--,league -->
                                     <tr class="top">
                                         <td colspan="2" rowspan="2" class="bb">{{score.date | toDate | date:'mediumDate'}}</td>
                                         <!-- <td colspan="2" rowspan="2" class="bb">{{score.date | date:'d MMM yyyy'}}</td> -->
@@ -146,9 +155,16 @@
 
                 <p>Bought from <a href="http://www.strikelineproshop.co.uk/">Strikeline Pro Shop</a>.</p>
 
-                <img src="images/Ball.jpg" class="img-fluid" alt="Ball" />
-                <img src="images/Bag.jpg" class="img-fluid" alt="Bag" />
-                <img src="images/All.jpg" class="img-fluid" alt="All" />
+                <img src="images/Ball.jpg" class="rounded" height="200" width="200" alt="Ball" />
+                <img src="images/Bag.jpg" class="rounded" height="200" width="200" alt="Bag" />
+                <img src="images/All.jpg" class="rounded" height="200" width="200" alt="All" />
+
+                <ul>
+                    <li>Pro Bowl £85 (included drilling)</li>
+                    <li>Storm Double Bag £45</li>
+                    <li>KR OPP Shoes £45</li>
+                    <li>Cloth FREE</li>
+                </ul>
 
                 <p><a href="https://www.stormbowling.com/2-ball-tote-dlx-25128">2-BALL TOTE DLX</a>, This versatile tote is a handy sidekick when carrying your two most important balls to league.</p>
 
@@ -159,6 +175,7 @@
 
                 <ul>
                     <li>https://www.tenpinshop.com/products/probowl-blue-orange-silver-tenpin-bowling-ball</li>
+                    <li>https://www.petesproshop.co.uk/acatalog/KR-Strikeforce-OPP-Bowling-Shoes---Black-SH-317.html</li>
                 </ul>
             </div>
 
