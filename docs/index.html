@@ -76,15 +76,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="row"> -->
-                        <!-- <div class="col"> -->
-                            <!-- <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="league" name="league" ng-model='league' value="false">
-                                <label class="form-check-label">League</label>
-                            </div> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-
                     <div class="row justify-content-md-center">
                         
                         <table id="scoresTable" class="bb">
@@ -236,6 +227,12 @@
                         </table>
                     </div>
 
+                    <div class="row">
+                        <div class="col">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -292,6 +289,11 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script> -->
     <script src="js/angular.min.js"></script>
+
+    <script src="js/vendor/chartjs/chart.min.js"></script>
+    <script src="js/vendor/chartjs/chartjs-plugin-annotation_1.0.2.js"></script>
+    <script src="js/vendor/chartjs/chartjs-plugin-datalabels.min.js"></script>
+    
     <script src="js/app.js"></script>
     </body>
 </html>

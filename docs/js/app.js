@@ -21,29 +21,79 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
   getData = () => {
     var file = "data/scores.json";
 
-    $http.get(file).then(function (response) {
-      $scope.scores = response.data.item.filter((s) => s.league === false);
-      $scope.leagueScores = response.data.item.filter((s) => s.league === true);
+    $http.get(file)
+      .then(function (response) {
+        $scope.scores = response.data.item.filter((s) => s.league === false);
+        $scope.leagueScores = response.data.item.filter((s) => s.league === true);
 
-      var totalSum = getTotal($scope.scores)
-      var numGames = $scope.scores.length;
-      var avgScore = totalSum / numGames;
-      $scope.avgScore = avgScore;
-      $scope.minScore = getMin($scope.scores);
-      $scope.maxScore = getMax($scope.scores);
-      $scope.count = numGames;
+        var totalSum = getTotal($scope.scores)
+        var numGames = $scope.scores.length;
+        var avgScore = totalSum / numGames;
+        $scope.avgScore = avgScore;
+        $scope.minScore = getMin($scope.scores);
+        $scope.maxScore = getMax($scope.scores);
+        $scope.count = numGames;
 
-      var totalLeagueSum = getTotal($scope.leagueScores)
-      var numLeagueGames = $scope.leagueScores.length;
-      var avgLeagueScore = totalLeagueSum / numLeagueGames;
-      $scope.avgLeagueScore = avgLeagueScore;
-      $scope.minLeagueScore = getMin($scope.leagueScores);
-      $scope.maxLeagueScore = getMax($scope.leagueScores);
-      $scope.maxLeagueSeriesScore = getMaxLeagueSeries($scope.leagueScores);
-      $scope.avgMaxLeagueSeriesScore = $scope.maxLeagueSeriesScore / 3
-      $scope.countLeague = numLeagueGames;
-    });
+        var totalLeagueSum = getTotal($scope.leagueScores)
+        var numLeagueGames = $scope.leagueScores.length;
+        var avgLeagueScore = totalLeagueSum / numLeagueGames;
+        $scope.avgLeagueScore = avgLeagueScore;
+        $scope.minLeagueScore = getMin($scope.leagueScores);
+        $scope.maxLeagueScore = getMax($scope.leagueScores);
+        $scope.maxLeagueSeriesScore = getMaxLeagueSeries($scope.leagueScores);
+        $scope.avgMaxLeagueSeriesScore = $scope.maxLeagueSeriesScore / 3
+        $scope.countLeague = numLeagueGames;
+
+        var keys = $scope.leagueScores.map(s => new Date(s.date).toLocaleDateString()); //.toLocaleString('en')) //.toLocaleFormat('%d %b %Y'));
+        var scores = $scope.leagueScores.map(s => s.Score10);
+        // Chart
+        generateChart(keys, scores, avgLeagueScore);
+      });
   };
+
+  generateChart = (keys, values, avg) => {
+    const options = {
+      plugins: {
+          autocolors: false,
+          datalabels: {
+              color: '#36A2EB'
+          },
+          annotation: {
+            annotations: {
+              line1: {
+                type: 'line',
+                yMin: avg,
+                yMax: avg,
+                borderColor: 'rgb(0, 0, 0)',
+                borderWidth: 2,
+              }
+            }
+          }
+      }
+    };
+
+    const config = {
+      type: 'line',
+      data: {
+          labels: keys,
+          datasets: [
+            {
+              label: 'Scores',
+              data: values,
+              fill: false,
+              borderColor: 'red',
+              tension: 0.1,
+              datalabels: {
+                  color: '#FFCE56'
+              }
+            }
+          ]
+        },
+        options
+    };
+    let ctx = $("#myChart");
+    let lineGraph = new Chart(ctx, config);
+  }
 
   $scope.init();
 });
