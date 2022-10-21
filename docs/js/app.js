@@ -11,6 +11,7 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
   $scope.minLeagueScore = 0;
   $scope.avgLeagueScore = 0.0; //=Round(SumScore/NumGames)
   $scope.maxLeagueSeriesScore = 0;
+  $scope.avgMaxLeagueSeriesScore = 0;
   $scope.leagueCount = 0;
 
   $scope.init = function () {
@@ -39,6 +40,7 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
       $scope.minLeagueScore = getMin($scope.leagueScores);
       $scope.maxLeagueScore = getMax($scope.leagueScores);
       $scope.maxLeagueSeriesScore = getMaxLeagueSeries($scope.leagueScores);
+      $scope.avgMaxLeagueSeriesScore = $scope.maxLeagueSeriesScore / 3
       $scope.countLeague = numLeagueGames;
     });
   };

@@ -68,7 +68,7 @@
                         <div>
                             <h2>Stats</h2>
                             <p>
-                                Max Score: <span>{{maxScore}}</span> | 
+                                Max Score: <span><strong>{{maxScore}}</strong></span> | 
                                 Min Score: <span>{{minScore}}</span> | 
                                 Avg Score: <span>{{avgScore | roundTo: 0}}</span> |
                                 Count #: <span>{{count}}</span>
@@ -160,13 +160,14 @@
                         <div>
                             <h2>Stats</h2>
                             <p>
-                                Max Score: <span>{{maxLeagueScore}}</span> | 
+                                Max Score: <span><strong>{{maxLeagueScore}}</strong></span> | 
                                 Min Score: <span>{{minLeagueScore}}</span> | 
                                 Avg Score: <span>{{avgLeagueScore | roundTo: 0}}</span> |
                                 Count #: <span>{{countLeague}}</span>
                             </p>
                             <p>
-                                Highest Series: <span>{{maxLeagueSeriesScore}}</span>
+                                Highest Series: <span>{{maxLeagueSeriesScore}}</span> |
+                                Avg Series: <span>{{avgMaxLeagueSeriesScore | roundTo: 0}}</span>
                             </p>
                         </div>
                     </div>
