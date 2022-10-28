@@ -8,6 +8,120 @@
   "webMaster": "alex@alexhedley.com (Alex Hedley)",
   "item": [
     {
+      "id": 114,
+      "Score1": "",
+      "Score1a": "8",
+      "Score1b": "-",
+      "Score2": "",
+      "Score2a": "8",
+      "Score2b": "-",
+      "Score3": "",
+      "Score3a": "3",
+      "Score3b": "5",
+      "Score4": "",
+      "Score4a": "7",
+      "Score4b": "-",
+      "Score5": "",
+      "Score5a": "-",
+      "Score5b": "5",
+      "Score6": "",
+      "Score6a": "8",
+      "Score6b": "\/",
+      "Score7": "",
+      "Score7a": "7",
+      "Score7b": "\/",
+      "Score8": "",
+      "Score8a": "5",
+      "Score8b": "\/",
+      "Score9": "",
+      "Score9a": "7",
+      "Score9b": "\/",
+      "Score10": "119",
+      "Score10a": "7",
+      "Score10b": "\/",
+      "Score10c": "7",
+      "date": "2022-10-26 19:30:00 +0000",
+      "url": "http:\/\/www.alexhedley.com\/bowling\/?id=114",
+      "league": true,
+      "hcp": 0
+    },
+    {
+      "id": 113,
+      "Score1": "6",
+      "Score1a": "-",
+      "Score1b": "6",
+      "Score2": "14",
+      "Score2a": "8",
+      "Score2b": "-",
+      "Score3": "34",
+      "Score3a": "X",
+      "Score3b": "",
+      "Score4": "53",
+      "Score4a": "8",
+      "Score4b": "\/",
+      "Score5": "72",
+      "Score5a": "9",
+      "Score5b": "\/",
+      "Score6": "81",
+      "Score6a": "9",
+      "Score6b": "-",
+      "Score7": "98",
+      "Score7a": "9",
+      "Score7b": "\/",
+      "Score8": "106",
+      "Score8a": "7",
+      "Score8b": "1",
+      "Score9": "113",
+      "Score9a": "7",
+      "Score9b": "-",
+      "Score10": "122",
+      "Score10a": "6",
+      "Score10b": "3",
+      "Score10c": "",
+      "date": "2022-10-26 19:30:00 +0000",
+      "url": "http:\/\/www.alexhedley.com\/bowling\/?id=113",
+      "league": true,
+      "hcp": 0
+    },
+    {
+      "id": 112,
+      "Score1": "5",
+      "Score1a": "-",
+      "Score1b": "5",
+      "Score2": "14",
+      "Score2a": "9",
+      "Score2b": "-",
+      "Score3": "23",
+      "Score3a": "8",
+      "Score3b": "1",
+      "Score4": "30",
+      "Score4a": "7",
+      "Score4b": "-",
+      "Score5": "37",
+      "Score5a": "7",
+      "Score5b": "-",
+      "Score6": "46",
+      "Score6a": "9",
+      "Score6b": "-",
+      "Score7": "49",
+      "Score7a": "1",
+      "Score7b": "2",
+      "Score8": "58",
+      "Score8a": "8*",
+      "Score8b": "1",
+      "Score9": "77",
+      "Score9a": "7",
+      "Score9b": "\/",
+      "Score10": "88",
+      "Score10a": "9",
+      "Score10b": "\/",
+      "Score10c": "1",
+      "date": "2022-10-26 19:30:00 +0000",
+      "url": "http:\/\/www.alexhedley.com\/bowling\/?id=112",
+      "league": true,
+      "hcp": 0 
+    },
+    {
       "id": 111,
       "Score1": "8",
       "Score1a": "8",
@@ -42,7 +156,8 @@
       "Score10c": "",
       "date": "2022-10-19 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=111",
-      "league": true
+      "league": true,
+      "hcp": 78
     },
     {
       "id": 110,
@@ -79,7 +194,8 @@
       "Score10c": "",
       "date": "2022-10-19 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=110",
-      "league": true
+      "league": true,
+      "hcp": 78
     },
     {
       "id": 109,
@@ -116,7 +232,8 @@
       "Score10c": "",
       "date": "2022-10-19 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=109",
-      "league": true
+      "league": true,
+      "hcp": 78
     },
     {
       "id": 108,
@@ -153,7 +270,8 @@
       "Score10c": "",
       "date": "2022-10-12 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=108",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 107,
@@ -190,7 +308,8 @@
       "Score10c": "7",
       "date": "2022-10-12 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=107",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 106,
@@ -227,7 +346,8 @@
       "Score10c": "",
       "date": "2022-10-12 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=106",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 105,
@@ -264,7 +384,8 @@
       "Score10c": "",
       "date": "2022-10-05 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=105",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 104,
@@ -301,7 +422,8 @@
       "Score10c": "",
       "date": "2022-10-05 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=104",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 103,
@@ -338,7 +460,8 @@
       "Score10c": "",
       "date": "2022-10-05 19:30:00 +0000",
       "url": "http://www.alexhedley.com/bowling/?id=103",
-      "league": true
+      "league": true,
+      "hcp": 70
     },
     {
       "id": 102,
