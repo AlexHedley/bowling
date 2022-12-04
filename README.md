@@ -14,6 +14,8 @@ See my Bowling scores from over the years.
 
 [View Site](https://alexhedley.github.io/bowling/)
 
+- [Docs](docs/README.md)
+
 ---
 
 ## Run

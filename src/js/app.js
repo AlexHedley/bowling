@@ -51,7 +51,7 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
       var scoresHCP = $scope.leagueScores.map(
         (s) => parseInt(s.Score10) + parseInt(s.hcp)
       );
-      console.log(scoresHCP);
+      // console.log(scoresHCP);
       var totalLeagueSumHCP = getTotalHCP($scope.leagueScores);
       var avgLeagueScoreHCP = totalLeagueSumHCP / numLeagueGames;
 

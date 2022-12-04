@@ -1,16 +1,3 @@
-.top { background-color: Yellow; color: Blue; }
-
-.bb {
-    background-color: Blue;
-    color: White;
-}
-.ts {
-    text-align: center;
-    font-weight: bold;
-}
-
-table tr td { border: 1px solid black; }
-
 h1 { 
     color: yellow;
     -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
@@ -41,9 +28,4 @@ a:visited {
 
 a:active {
     background-color: yellow;
-}
-
-.hardSpare { 
-    border-width: 2px;
-    border-color: red;
 }
