@@ -21,6 +21,12 @@ table tr td {
     border-color: red;
 }
 
+.strike {
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
 .hdp {
     background-color: White;
     color: Blue;

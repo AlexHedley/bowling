@@ -23,47 +23,29 @@
         {{score.date | toDate | date:'mediumDate'}}
       </td>
       <!-- <td colspan="2" rowspan="2" class="bb">{{score.date | date:'d MMM yyyy'}}</td> -->
-      <td ng-class="score.Score1a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score1a}}
+      <td ng-class="$ctrl.getClass(score.Score1a);">
+        {{$ctrl.trim(score.Score1a)}}
       </td>
-      <td>{{score.Score1b}}</td>
-      <td ng-class="score.Score2a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score2a}}
-      </td>
-      <td>{{score.Score2b}}</td>
-      <td ng-class="score.Score3a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score3a}}
-      </td>
-      <td>{{score.Score3b}}</td>
-      <td ng-class="score.Score4a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score4a}}
-      </td>
-      <td>{{score.Score4b}}</td>
-      <td ng-class="score.Score5a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score5a}}
-      </td>
-      <td>{{score.Score5b}}</td>
-      <td ng-class="score.Score6a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score6a}}
-      </td>
-      <td>{{score.Score6b}}</td>
-      <td ng-class="score.Score7a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score7a}}
-      </td>
-      <td>{{score.Score7b}}</td>
-      <td ng-class="score.Score8a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score8a}}
-      </td>
-      <td>{{score.Score8b}}</td>
-      <td ng-class="score.Score9a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score9a}}
-      </td>
-      <td>{{score.Score9b}}</td>
-      <td ng-class="score.Score10a.length > 1 ? 'hardSpare' : ''">
-        {{score.Score10a}}
-      </td>
-      <td>{{score.Score10b}}</td>
-      <td>{{score.Score10c}}</td>
+      <td>{{$ctrl.trim(score.Score1b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score2a);">{{score.Score2a}}</td>
+      <td>{{$ctrl.trim(score.Score2b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score3a);">{{score.Score3a}}</td>
+      <td>{{$ctrl.trim(score.Score3b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score4a);">{{score.Score4a}}</td>
+      <td>{{$ctrl.trim(score.Score4b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score5a);">{{score.Score5a}}</td>
+      <td>{{$ctrl.trim(score.Score5b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score6a);">{{score.Score6a}}</td>
+      <td>{{$ctrl.trim(score.Score6b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score7a);">{{score.Score7a}}</td>
+      <td>{{$ctrl.trim(score.Score7b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score8a);">{{score.Score8a}}</td>
+      <td>{{$ctrl.trim(score.Score8b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score9a);">{{score.Score9a}}</td>
+      <td>{{$ctrl.trim(score.Score9b)}}</td>
+      <td ng-class="$ctrl.getClass(score.Score10a);">{{score.Score10a}}</td>
+      <td>{{$ctrl.trim(score.Score10b)}}</td>
+      <td>{{$ctrl.trim(score.Score10c)}}</td>
       <td class="hdp">{{score.hcp}}</td>
       <td ng-if="$ctrl.isleague" rowspan="2" class="bb ts">
         {{(+score.Score10)+(+score.hcp)}}
