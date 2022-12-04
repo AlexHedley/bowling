@@ -14,6 +14,11 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
   $scope.avgMaxLeagueSeriesScore = 0;
   $scope.leagueCount = 0;
 
+  $scope.strikes = 0;
+  $scope.leagueStrikes = 0;
+  $scope.spares = 0;
+  $scope.leagueSpares = 0;
+
   $scope.init = function () {
     getData();
   };
@@ -24,6 +29,16 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
     $http.get(file).then(function (response) {
       $scope.scores = response.data.item.filter((s) => s.league === false);
       $scope.leagueScores = response.data.item.filter((s) => s.league === true);
+
+      $scope.strikes = getStrikes($scope.scores);
+      console.log($scope.strikes);
+      $scope.leagueStrikes = getStrikes($scope.leagueScores);
+      console.log($scope.leagueStrikes);
+
+      $scope.spares = getSpares($scope.scores);
+      console.log($scope.spares);
+      $scope.leagueSpares = getSpares($scope.leagueScores);
+      console.log($scope.leagueSpares);
 
       var totalSum = getTotal($scope.scores);
       var numGames = $scope.scores.length;
@@ -180,6 +195,31 @@ function getMaxLeagueSeries(scores) {
 
   var max = Math.max(...result.map((o) => o.Score10));
   return max;
+}
+
+function getStrikes(scores) {
+  return getCountOfSpecial(scores, "X");
+}
+
+function getSpares(scores) {
+  return getCountOfSpecial(scores, "/");
+}
+
+function getCountOfSpecial(scores, character) {
+  var count = 0;
+  scores.forEach((x) => {
+    var keys = Object.keys(x);
+    for (var k in keys) {
+      // console.log(k);
+      var keyName = keys[k];
+      // console.log(keyName);
+      var value = x[keyName];
+      // console.log(value);
+      if (value === character) count += 1;
+    }
+  });
+  // console.log(count);
+  return count;
 }
 
 myApp.filter("roundTo", function (numberFilter) {
