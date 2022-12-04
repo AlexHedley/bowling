@@ -16,9 +16,16 @@ See my Bowling scores from over the years.
 
 - [Docs](docs/README.md)
 
+## League
+
+- [League](https://alexhedley.github.io/bowling-league/)
+- [Code](https://www.github.io/alexhedley/bowling-league/)
+
 ---
 
 ## Run
+
+`cd src`
 
 `py -m http.server`
 
