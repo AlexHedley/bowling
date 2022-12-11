@@ -124,11 +124,12 @@
                 <h2>Stats</h2>
                 <p>
                   Max Score: <span><strong>{{maxScore}}</strong></span> | Min
-                  Score: <span>{{minScore}}</span> | Avg Score:
+                  Score: <span><em>{{minScore}}</em></span> | Avg Score:
                   <span>{{avgScore | roundTo: 0}}</span> | Count #:
                   <span>{{count}}</span> | Strikes:
                   <span class="strike">X</span> <span>{{strikes}}</span> |
-                  Spares: <span>{{spares}}</span>
+                  Spares: / <span>{{spares}}</span> | Splits: *
+                  <span>{{splits}}</span>
                 </p>
               </div>
             </div>
@@ -151,14 +152,15 @@
                 <h2>Stats</h2>
                 <p>
                   Max Score: <span><strong>{{maxLeagueScore}}</strong></span> |
-                  Min Score: <span>{{minLeagueScore}}</span> | Avg Score:
-                  <span>{{avgLeagueScore | roundTo: 0}}</span> | Count #:
+                  Min Score: <span><em>{{minLeagueScore}}</em></span> | Avg
+                  Score: <span>{{avgLeagueScore | roundTo: 0}}</span> | Count #:
                   <span>{{countLeague}}</span>
                 </p>
                 <p>
                   Strikes: <span class="strike">X</span>
-                  <span>{{leagueStrikes}}</span> | Spares:
+                  <span>{{leagueStrikes}}</span> | Spares: /
                   <span>{{leagueSpares}}</span>
+                  | Splits: * <span>{{leagueSplits}}</span>
                 </p>
                 <p>
                   Highest Series: <span>{{maxLeagueSeriesScore}}</span> | Avg
