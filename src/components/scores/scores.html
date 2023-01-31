@@ -17,7 +17,41 @@
     </tr>
   </thead>
   <tbody ng-repeat="score in $ctrl.scores | orderBy:'-id' | filter:searchText">
-    <!--,league -->
+    <tr ng-if="score.pins" style="text-align: center">
+      <th colspan="2"></th>
+      <td colspan="2">
+        <pins pins="score.pins[0]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[1]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[2]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[3]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[4]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[5]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[6]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[7]"></pins>
+      </td>
+      <td colspan="2">
+        <pins pins="score.pins[8]"></pins>
+      </td>
+      <td colspan="3">
+        <pins pins="score.pins[9]"></pins>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+
     <tr class="top">
       <td colspan="2" rowspan="2" class="bb">
         {{score.date | toDate | date:'mediumDate'}}
