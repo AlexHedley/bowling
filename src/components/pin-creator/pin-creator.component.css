@@ -1,0 +1,17 @@
+table.pins {
+  table-layout: fixed;
+  width: 75px;
+  color: lightgrey;
+}
+table.pins {
+  width: 100px;
+}
+table.pins > tbody > tr > td {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
