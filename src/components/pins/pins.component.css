@@ -1,17 +1,57 @@
-table.pins {
-  table-layout: fixed;
-  width: 75px;
-  color: lightgrey;
-}
-table.pins {
+.pins-container {
+  position: relative;
   width: 100px;
+  height: 105px;
 }
-table.pins > tbody > tr > td {
-  text-align: center;
-  border-collapse: collapse;
-  border-spacing: 0;
+
+.pin {
+  position: absolute;
+  width: 24px;
+  height: 24px;
 }
-.center {
-  margin-left: auto;
-  margin-right: auto;
+
+.center-col {
+  left: calc(50% - 12px);
 }
+
+.first-row {
+  top: 1px;
+}
+
+.first-col-left {
+  left: calc(50% - 24px);
+}
+
+.first-col-right {
+  left: calc(50% + 1px);
+}
+
+.second-row {
+  top: 26px;
+}
+
+.second-col-left {
+  left: calc(50% - 36px);
+}
+
+.second-col-right {
+  left: calc(50% + 13px);
+}
+
+.third-row {
+  top: 53px;
+}
+
+.third-col-left {
+  left: calc(50% - 48px);
+}
+
+.third-col-right {
+  left: calc(50% + 25px);
+}
+
+.fourth-row {
+  top: 80px;
+}
+
+
