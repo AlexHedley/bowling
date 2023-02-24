@@ -13,7 +13,7 @@
     <meta name="author" content="Alex Hedley" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/sticky-footer.css" />
+    <link rel="stylesheet" href="css/vendor/sticky-footer.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -26,6 +26,14 @@
     <!-- Components -->
     <link rel="stylesheet" href="components/scores/scores.component.css" />
     <link rel="stylesheet" href="components/pins/pins.component.css" />
+    <link
+      rel="stylesheet"
+      href="components/score-creator/score-creator.component.css"
+    />
+    <link
+      rel="stylesheet"
+      href="components/pin-creator/pin-creator.component.css"
+    />
 
     <link rel="shortcut icon" href="favicon.ico" />
 
@@ -80,8 +88,23 @@
             Equipment
           </button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="score-creator-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#score-creator"
+            type="button"
+            role="tab"
+            aria-controls="score-creator"
+            aria-selected="false"
+          >
+            Score Creator
+          </button>
+        </li>
       </ul>
 
+      <!-- Scores -->
       <div class="tab-content" id="myTabContent">
         <div
           class="tab-pane fade show active"
@@ -122,7 +145,7 @@
           <div class="container">
             <div class="row">
               <div>
-                <h2>Stats</h2>
+                <h2>🎳 Stats</h2>
                 <p>
                   Max Score: <span><strong>{{maxScore}}</strong></span> | Min
                   Score: <span><em>{{minScore}}</em></span> | Avg Score:
@@ -141,6 +164,7 @@
           </div>
         </div>
 
+        <!-- League -->
         <div
           class="tab-pane fade"
           id="league"
@@ -150,7 +174,7 @@
           <div class="container">
             <div class="row">
               <div>
-                <h2>Stats</h2>
+                <h2>🎳 League Stats</h2>
                 <p>
                   Max Score: <span><strong>{{maxLeagueScore}}</strong></span> |
                   Min Score: <span><em>{{minLeagueScore}}</em></span> | Avg
@@ -182,73 +206,114 @@
           </div>
         </div>
 
+        <!-- Equipment -->
         <div
           class="tab-pane fade"
           id="equipment"
           role="tabpanel"
           aria-labelledby="equipment-tab"
         >
-          <p>
-            Bought from
-            <a href="http://www.strikelineproshop.co.uk/">Strikeline Pro Shop</a
-            >.
-          </p>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2>👟 🎳 Equipment</h2>
+              </div>
+            </div>
 
-          <img
-            src="images/Ball.jpg"
-            class="rounded"
-            height="200"
-            width="200"
-            alt="Ball"
-          />
-          <img
-            src="images/Bag.jpg"
-            class="rounded"
-            height="200"
-            width="200"
-            alt="Bag"
-          />
-          <img
-            src="images/All.jpg"
-            class="rounded"
-            height="200"
-            width="200"
-            alt="All"
-          />
+            <div class="row">
+              <div class="col">
+                <p>
+                  Bought from
+                  <a href="http://www.strikelineproshop.co.uk/"
+                    >Strikeline Pro Shop</a
+                  >.
+                </p>
 
-          <ul>
-            <li>Pro Bowl £85 (included drilling)</li>
-            <li>Storm Double Bag £45</li>
-            <li>KR OPP Shoes £45</li>
-            <li>Cloth FREE</li>
-          </ul>
+                <img
+                  src="images/Ball.jpg"
+                  class="rounded"
+                  height="200"
+                  width="200"
+                  alt="Ball"
+                />
+                <img
+                  src="images/Bag.jpg"
+                  class="rounded"
+                  height="200"
+                  width="200"
+                  alt="Bag"
+                />
+                <img
+                  src="images/All.jpg"
+                  class="rounded"
+                  height="200"
+                  width="200"
+                  alt="All"
+                />
 
-          <p>
-            <a href="https://www.stormbowling.com/2-ball-tote-dlx-25128"
-              >2-BALL TOTE DLX</a
-            >, This versatile tote is a handy sidekick when carrying your two
-            most important balls to league.
-          </p>
+                <ul>
+                  <li>Pro Bowl £85 (included drilling)</li>
+                  <li>Storm Double Bag £45</li>
+                  <li>KR OPP Shoes £45</li>
+                  <li>Cloth FREE</li>
+                </ul>
 
-          <ul>
-            <li>
-              <a href="https://www.stormbowling.com/"
-                >https://www.stormbowling.com/</a
-              >
-            </li>
-            <li>
-              <a href="https://dv8bowling.com/">https://dv8bowling.com/</a>
-            </li>
-          </ul>
+                <p>
+                  <a href="https://www.stormbowling.com/2-ball-tote-dlx-25128"
+                    >2-BALL TOTE DLX</a
+                  >, This versatile tote is a handy sidekick when carrying your
+                  two most important balls to league.
+                </p>
 
-          <ul>
-            <li>
-              https://www.tenpinshop.com/products/probowl-blue-orange-silver-tenpin-bowling-ball
-            </li>
-            <li>
-              https://www.petesproshop.co.uk/acatalog/KR-Strikeforce-OPP-Bowling-Shoes---Black-SH-317.html
-            </li>
-          </ul>
+                <ul>
+                  <li>
+                    <a href="https://www.stormbowling.com/"
+                      >https://www.stormbowling.com/</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://dv8bowling.com/"
+                      >https://dv8bowling.com/</a
+                    >
+                  </li>
+                </ul>
+
+                <ul>
+                  <li>
+                    https://www.tenpinshop.com/products/probowl-blue-orange-silver-tenpin-bowling-ball
+                  </li>
+                  <li>
+                    https://www.petesproshop.co.uk/acatalog/KR-Strikeforce-OPP-Bowling-Shoes---Black-SH-317.html
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Score Creator -->
+        <div
+          class="tab-pane fade"
+          id="score-creator"
+          role="tabpanel"
+          aria-labelledby="score-creator-tab"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2>🎳 Score Creator</h2>
+              </div>
+            </div>
+
+            <div class="row justify-content-md-center">
+              <div class="col">
+                <score-creator
+                  scores="leagueScores"
+                  isleague="true"
+                ></score-creator>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -291,5 +356,7 @@
     <!-- Components -->
     <script src="components/scores/scores.component.js"></script>
     <script src="components/pins/pins.component.js"></script>
+    <script src="components/score-creator/score-creator.component.js"></script>
+    <script src="components/pin-creator/pin-creator.component.js"></script>
   </body>
 </html>
