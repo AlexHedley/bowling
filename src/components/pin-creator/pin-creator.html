@@ -1,35 +1,45 @@
-<table class="pins" rules="none">
-  <thead></thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center" colspan="4">
-        <input type="radio" />
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><input type="radio" /></td>
-      <td><input type="radio" /></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <table class="pins center" rules="none">
-          <tbody>
-            <tr>
-              <td><input type="radio" /></td>
-              <td><input type="radio" /></td>
-              <td><input type="radio" /></td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td><input type="radio" /></td>
-      <td><input type="radio" /></td>
-      <td><input type="radio" /></td>
-      <td><input type="radio" /></td>
-    </tr>
-  </tbody>
-</table>
+<div class="pins-container">
+  <div class="pin fourth-row center-col">
+    <input
+      id="1"
+      type="input"
+      size="1"
+      ng-click="$ctrl.toggle_tristate(this)"
+    />
+  </div>
+  <div class="pin third-row first-col-left">
+    <input
+      id="2"
+      type="input"
+      size="1"
+      ng-click="$ctrl.toggle_tristate(this)"
+    />
+  </div>
+  <div class="pin third-row first-col-right">
+    <input
+      id="3"
+      type="input"
+      size="1"
+      ng-click="$ctrl.toggle_tristate(this)"
+    />
+  </div>
+  <div class="pin second-row second-col-left">
+    {{$ctrl.symbol($ctrl.pins.four)}}
+  </div>
+  <div class="pin second-row center-col">{{$ctrl.symbol($ctrl.pins.five)}}</div>
+  <div class="pin second-row second-col-right">
+    {{$ctrl.symbol($ctrl.pins.six)}}
+  </div>
+  <div class="pin first-row third-col-left">
+    {{$ctrl.symbol($ctrl.pins.seven)}}
+  </div>
+  <div class="pin first-row first-col-left">
+    {{$ctrl.symbol($ctrl.pins.eight)}}
+  </div>
+  <div class="pin first-row first-col-right">
+    {{$ctrl.symbol($ctrl.pins.nine)}}
+  </div>
+  <div class="pin first-row third-col-right">
+    {{$ctrl.symbol($ctrl.pins.ten)}}
+  </div>
+</div>
