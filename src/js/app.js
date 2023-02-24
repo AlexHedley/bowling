@@ -1,5 +1,5 @@
-var myApp = angular.module("myApp", []);
-myApp.controller("myController", function ($scope, $http, $q, $filter) {
+var myApp = angular.module('myApp', ['ui.indeterminate']);
+myApp.controller('myController', function ($scope, $http, $q, $filter) {
   $scope.scores = [];
   $scope.maxScore = 0;
   $scope.minScore = 0;
@@ -26,7 +26,7 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
   };
 
   getData = () => {
-    var file = "data/scores.json";
+    var file = 'data/scores.json';
 
     $http.get(file).then(function (response) {
       $scope.scores = response.data.item.filter((s) => s.league === false);
@@ -59,14 +59,10 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
       $scope.avgMaxLeagueSeriesScore = $scope.maxLeagueSeriesScore / 3;
       $scope.countLeague = numLeagueGames;
 
-      var keys = $scope.leagueScores.map((s) =>
-        new Date(s.date).toLocaleDateString()
-      ); //.toLocaleString('en')) //.toLocaleFormat('%d %b %Y'));
+      var keys = $scope.leagueScores.map((s) => new Date(s.date).toLocaleDateString()); //.toLocaleString('en')) //.toLocaleFormat('%d %b %Y'));
       var scores = $scope.leagueScores.map((s) => s.Score10);
 
-      var scoresHCP = $scope.leagueScores.map(
-        (s) => parseInt(s.Score10) + parseInt(s.hcp)
-      );
+      var scoresHCP = $scope.leagueScores.map((s) => parseInt(s.Score10) + parseInt(s.hcp));
       // console.log(scoresHCP);
       var totalLeagueSumHCP = getTotalHCP($scope.leagueScores);
       var avgLeagueScoreHCP = totalLeagueSumHCP / numLeagueGames;
@@ -81,22 +77,22 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
       plugins: {
         autocolors: false,
         datalabels: {
-          color: "#36A2EB",
+          color: '#36A2EB',
         },
         annotation: {
           annotations: {
             line1: {
-              type: "line",
+              type: 'line',
               yMin: avg,
               yMax: avg,
-              borderColor: "rgb(0, 0, 0)",
+              borderColor: 'rgb(0, 0, 0)',
               borderWidth: 2,
             },
             line2: {
-              type: "line",
+              type: 'line',
               yMin: avgHCP,
               yMax: avgHCP,
-              borderColor: "rgb(0, 0, 0)",
+              borderColor: 'rgb(0, 0, 0)',
               borderWidth: 2,
             },
           },
@@ -105,40 +101,49 @@ myApp.controller("myController", function ($scope, $http, $q, $filter) {
     };
 
     const config = {
-      type: "line",
+      type: 'line',
       data: {
         labels: keys,
         datasets: [
           {
-            label: "Scores",
+            label: 'Scores',
             data: values,
             fill: false,
-            borderColor: "red",
+            borderColor: 'red',
             tension: 0.1,
             datalabels: {
-              color: "#FFCE56",
+              color: '#FFCE56',
             },
           },
           {
-            label: "Scores (HCP)",
+            label: 'Scores (HCP)',
             data: valuesHCP,
             fill: false,
-            borderColor: "blue",
+            borderColor: 'blue',
             tension: 0.1,
             datalabels: {
-              color: "#FFCE56",
+              color: '#FFCE56',
             },
           },
         ],
       },
       options,
     };
-    let ctx = $("#myChart");
+    let ctx = $('#myChart');
     let lineGraph = new Chart(ctx, config);
   };
 
   $scope.init();
 });
+
+function showTab() {
+  var currentTab = localStorage.getItem('CurrentTab');
+  // console.debug('CurrentTab', currentTab);
+  var id = '#section' + currentTab;
+  $(id).show();
+
+  localStorage.setItem('CurrentTab', el);
+}
 
 function getMax(scores) {
   var max = Math.max.apply(
@@ -199,15 +204,15 @@ function getMaxLeagueSeries(scores) {
 }
 
 function getStrikes(scores) {
-  return getCountOfSpecial(scores, "X");
+  return getCountOfSpecial(scores, 'X');
 }
 
 function getSpares(scores) {
-  return getCountOfSpecial(scores, "/");
+  return getCountOfSpecial(scores, '/');
 }
 
 function getSlits(scores) {
-  return getCountOfSpecial(scores, "*");
+  return getCountOfSpecial(scores, '*');
 }
 
 function getCountOfSpecial(scores, character) {
@@ -223,15 +228,13 @@ function getCountOfSpecial(scores, character) {
   return count;
 }
 
-myApp.filter("roundTo", function (numberFilter) {
+myApp.filter('roundTo', function (numberFilter) {
   return function (value, maxDecimals) {
-    return numberFilter(
-      (value || 0).toFixed(maxDecimals).replace(/(?:\.0+|(\.\d+?)0+)$/, "$1")
-    );
+    return numberFilter((value || 0).toFixed(maxDecimals).replace(/(?:\.0+|(\.\d+?)0+)$/, '$1'));
   };
 });
 
-myApp.filter("toDate", function () {
+myApp.filter('toDate', function () {
   return function (items) {
     return new Date(items);
   };
