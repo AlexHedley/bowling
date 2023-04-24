@@ -21,6 +21,9 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
   $scope.splits = 0;
   $scope.leagueSplits = 0;
 
+  // $scope.minHandicap = 0;
+  // $scope.maxHandicap = 0;
+
   $scope.init = function () {
     getData();
   };
@@ -49,6 +52,9 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
       $scope.maxScore = getMax($scope.scores);
       $scope.count = numGames;
 
+      // $scope.minHandicap = Math.min.apply(Math, $scope.scores.map(function (item) { return item.hcp; }));
+      // $scope.maxHandicap = Math.max.apply(Math, $scope.scores.map(function (item) { return item.hcp; }));
+
       var totalLeagueSum = getTotal($scope.leagueScores);
       var numLeagueGames = $scope.leagueScores.length;
       var avgLeagueScore = totalLeagueSum / numLeagueGames;
@@ -63,7 +69,6 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
       var scores = $scope.leagueScores.map((s) => s.Score10);
 
       var scoresHCP = $scope.leagueScores.map((s) => parseInt(s.Score10) + parseInt(s.hcp));
-      // console.log(scoresHCP);
       var totalLeagueSumHCP = getTotalHCP($scope.leagueScores);
       var avgLeagueScoreHCP = totalLeagueSumHCP / numLeagueGames;
 

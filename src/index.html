@@ -152,8 +152,8 @@
                   <span>{{avgScore | roundTo: 0}}</span> | Count #:
                   <span>{{count}}</span> | Strikes:
                   <span class="strike">X</span> <span>{{strikes}}</span> |
-                  Spares: / <span>{{spares}}</span> | Splits: *
-                  <span>{{splits}}</span>
+                  Spares: <strong>/</strong> <span>{{spares}}</span> | Splits: <strong>*</strong>
+                  <span>{{splits}}</span> 
                 </p>
               </div>
             </div>
@@ -183,10 +183,13 @@
                 </p>
                 <p>
                   Strikes: <span class="strike">X</span>
-                  <span>{{leagueStrikes}}</span> | Spares: /
+                  <span>{{leagueStrikes}}</span> | Spares: <strong>/</strong>
                   <span>{{leagueSpares}}</span>
-                  | Splits: * <span>{{leagueSplits}}</span>
+                  | Splits: <strong>*</strong> <span>{{leagueSplits}}</span>
                 </p>
+                <!-- <p> -->
+                  <!-- Handicap Max:{{maxHandicap}} Min:{{minHandicap}} -->
+                <!-- </p> -->
                 <p>
                   Highest Series: <span>{{maxLeagueSeriesScore}}</span> | Avg
                   Series: <span>{{avgMaxLeagueSeriesScore | roundTo: 0}}</span>
