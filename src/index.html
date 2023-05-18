@@ -173,14 +173,19 @@
         >
           <div class="container">
             <div class="row">
-              <div>
+              <div class="col">
                 <h2>🎳 League Stats</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4">
                 <p>
                   Max Score: <span><strong>{{maxLeagueScore}}</strong></span> |
                   Min Score: <span><em>{{minLeagueScore}}</em></span> | Avg
-                  Score: <span>{{avgLeagueScore | roundTo: 0}}</span> | Count #:
-                  <span>{{countLeague}}</span>
+                  Score: <span>{{avgLeagueScore | roundTo: 0}}</span>
                 </p>
+              </div>
+              <div class="col-lg-4">
                 <p>
                   Strikes: <span class="strike">X</span>
                   <span>{{leagueStrikes}}</span> | Spares: <strong>/</strong>
@@ -190,10 +195,17 @@
                 <!-- <p> -->
                   <!-- Handicap Max:{{maxHandicap}} Min:{{minHandicap}} -->
                 <!-- </p> -->
+              </div>
+              <div class="col-lg-4">
                 <p>
                   Highest Series: <span>{{maxLeagueSeriesScore}}</span> | Avg
                   Series: <span>{{avgMaxLeagueSeriesScore | roundTo: 0}}</span>
                 </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Count #: <span>{{countLeague}}</span></p>
               </div>
             </div>
 
