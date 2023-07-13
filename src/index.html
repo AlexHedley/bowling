@@ -144,23 +144,37 @@
 
           <div class="container">
             <div class="row">
-              <div>
+              <div class="col">
                 <h2>🎳 Stats</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
                 <p>
-                  Max Score: <span><strong>{{maxScore}}</strong></span> | Min
-                  Score: <span><em>{{minScore}}</em></span> | Avg Score:
-                  <span>{{avgScore | roundTo: 0}}</span> | Count #:
-                  <span>{{count}}</span> | Strikes:
-                  <span class="strike">X</span> <span>{{strikes}}</span> |
-                  Spares: <strong>/</strong> <span>{{spares}}</span> | Splits: <strong>*</strong>
-                  <span>{{splits}}</span> 
+                  Max Score: <span><strong>{{maxScore}}</strong></span> |
+                  Min Score: <span><em>{{minScore}}</em></span> | Avg
+                  Score: <span>{{avgScore | roundTo: 0}}</span>
                 </p>
+              </div>
+              <div class="col-lg-6">
+                <p>
+                  Strikes: <span class="strike">X</span>
+                  <span>{{strikes}}</span> | Spares: <strong>/</strong>
+                  <span>{{spares}}</span>
+                  | Splits: <strong>*</strong> <span>{{splits}}</span>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Count #: <span>{{count}}</span></p>
               </div>
             </div>
 
             <div class="row justify-content-md-center">
               <scores scores="scores"></scores>
             </div>
+
           </div>
         </div>
 
