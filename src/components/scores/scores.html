@@ -13,7 +13,7 @@
       <th colspan="2">9</th>
       <th colspan="3">10</th>
       <th>Total</th>
-      <th ng-if="$ctrl.isleague">Total</th>
+      <th ng-if="$ctrl.isleague"></th>
     </tr>
   </thead>
   <tbody ng-repeat="score in $ctrl.scores | orderBy:'-id' | filter:searchText">
