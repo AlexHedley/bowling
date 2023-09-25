@@ -26,6 +26,7 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
 
   $scope.init = function () {
     getData();
+    showTab();
   };
 
   getData = () => {
@@ -143,12 +144,12 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
 
 function showTab() {
   var currentTab = localStorage.getItem('CurrentTab');
-  // console.debug('CurrentTab', currentTab);
-  var id = '#section' + currentTab;
-  $(id).show();
-
-  localStorage.setItem('CurrentTab', el);
+  $("#" + currentTab).tab('show');
 }
+
+$('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+  localStorage.setItem('CurrentTab', $(e.target).attr('id'));
+});
 
 function getMax(scores) {
   var max = Math.max.apply(
