@@ -1,5 +1,9 @@
 var myApp = angular.module('myApp', ['ui.indeterminate']);
 myApp.controller('myController', function ($scope, $http, $q, $filter) {
+
+  $scope.file = ''; //'2023';
+  $scope.files = ['2023', '2022'];
+  
   $scope.scores = [];
   $scope.maxScore = 0;
   $scope.minScore = 0;
@@ -24,14 +28,28 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
   // $scope.minHandicap = 0;
   // $scope.maxHandicap = 0;
 
+  var files = [];
+
   $scope.init = function () {
-    getData();
+    setupFilesList();
     showTab();
   };
 
-  getData = () => {
-    var file = 'data/scores.json';
+  setupFilesList = () => {
+  // var file = 'data/scores.json';
+    angular.forEach($scope.files, function(value, key) {
+        var file = `data/${value}.json`;
+        files.push(file);
+    });
+  }
 
+  $scope.loadYear = () => {
+    var file = `data/${$scope.file}.json`;
+    getData(file);
+  }
+
+  getData = (file) => {
+    console.log(file);
     $http.get(file).then(function (response) {
       $scope.scores = response.data.item.filter((s) => s.league === false);
       $scope.leagueScores = response.data.item.filter((s) => s.league === true);
@@ -74,7 +92,7 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
       var avgLeagueScoreHCP = totalLeagueSumHCP / numLeagueGames;
 
       // Chart
-      generateChart(keys, scores, avgLeagueScore, scoresHCP, avgLeagueScoreHCP);
+      // generateChart(keys, scores, avgLeagueScore, scoresHCP, avgLeagueScoreHCP);
     });
   };
 

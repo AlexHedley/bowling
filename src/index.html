@@ -46,6 +46,16 @@
     <!-- Begin page content -->
     <main role="main" class="container" ng-controller="myController">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+        <li>
+          <!-- <label for="files" class="form-control">Year:</label> -->
+          <select class="form-control"
+              ng-model="file"    
+              ng-change="loadYear()">
+              <option ng-repeat="file in files" value="{{file}}">{{file}}</option>
+          </select>
+        </li>
+
         <li class="nav-item active" role="presentation">
           <button
             class="nav-link active"
