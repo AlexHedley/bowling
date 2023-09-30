@@ -104,6 +104,21 @@ function ScoreCreatorController() {
       "pins": []
     }`;
 
+    // "pins": [
+    //   {
+    //     "one": "1",
+    //     "two": "1",
+    //     "three": "1",
+    //     "four": "1",
+    //     "five": "1",
+    //     "six": "1",
+    //     "seven": "1",
+    //     "eight": "1",
+    //     "nine": "2",
+    //     "ten": ""
+    //   },
+    // ]
+
     $('#Scores').html(scores);
   }
 

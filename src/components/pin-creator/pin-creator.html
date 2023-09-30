@@ -1,45 +1,33 @@
 <div class="pins-container">
-  <div class="pin fourth-row center-col">
-    <input
-      id="1"
-      type="input"
-      size="1"
-      ng-click="$ctrl.toggle_tristate(this)"
-    />
+  <div id="frame_{{$ctrl.id}}_pin_1" class="pin fourth-row center-col" ng-click="$ctrl.changeSymbol($event)">
+    {{$ctrl.symbol($ctrl.pins.one)}}
   </div>
-  <div class="pin third-row first-col-left">
-    <input
-      id="2"
-      type="input"
-      size="1"
-      ng-click="$ctrl.toggle_tristate(this)"
-    />
+  <div id="frame_{{$ctrl.id}}_pin_2" class="pin third-row first-col-left" ng-click="$ctrl.changeSymbol($event)">
+    {{$ctrl.symbol($ctrl.pins.two)}}
   </div>
-  <div class="pin third-row first-col-right">
-    <input
-      id="3"
-      type="input"
-      size="1"
-      ng-click="$ctrl.toggle_tristate(this)"
-    />
+  <div id="frame_{{$ctrl.id}}_pin_3" class="pin third-row first-col-right" ng-click="$ctrl.changeSymbol($event)">
+    {{$ctrl.symbol($ctrl.pins.three)}}
   </div>
-  <div class="pin second-row second-col-left">
+  <div id="frame_{{$ctrl.id}}_pin_4" class="pin second-row second-col-left" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.four)}}
   </div>
-  <div class="pin second-row center-col">{{$ctrl.symbol($ctrl.pins.five)}}</div>
-  <div class="pin second-row second-col-right">
+  <div id="frame_{{$ctrl.id}}_pin_5" class="pin second-row center-col" ng-click="$ctrl.changeSymbol($event)">
+    {{$ctrl.symbol($ctrl.pins.five)}}
+  </div>
+  <div id="frame_{{$ctrl.id}}_pin_6" class="pin second-row second-col-right" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.six)}}
   </div>
-  <div class="pin first-row third-col-left">
+  <div id="frame_{{$ctrl.id}}_pin_7" class="pin first-row third-col-left" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.seven)}}
   </div>
-  <div class="pin first-row first-col-left">
+  <div id="frame_{{$ctrl.id}}_pin_8" class="pin first-row first-col-left" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.eight)}}
   </div>
-  <div class="pin first-row first-col-right">
+  <div id="frame_{{$ctrl.id}}_pin_9" class="pin first-row first-col-right" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.nine)}}
   </div>
-  <div class="pin first-row third-col-right">
+  <div id="frame_{{$ctrl.id}}_pin_10" class="pin first-row third-col-right" ng-click="$ctrl.changeSymbol($event)">
     {{$ctrl.symbol($ctrl.pins.ten)}}
   </div>
 </div>
+<!-- <button ng-click="$ctrl.pinScores()">Pin Scores</button> -->
