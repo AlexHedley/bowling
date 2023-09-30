@@ -28,6 +28,7 @@ table tr td {
 }
 
 .hdp {
+    font-size: small;
     background-color: grey;
     color: Blue;
 }

@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Bowling Scores" />
     <meta name="keywords" content="bowling, scores" />
     <meta name="author" content="Alex Hedley" />
@@ -18,25 +13,17 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
     <link rel="stylesheet" href="css/vendor/jquery-ui.1.12.1.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Components -->
     <link rel="stylesheet" href="components/scores/scores.component.css" />
     <link rel="stylesheet" href="components/pins/pins.component.css" />
-    <link
-      rel="stylesheet"
-      href="components/score-creator/score-creator.component.css"
-    />
-    <link
-      rel="stylesheet"
-      href="components/pin-creator/pin-creator.component.css"
-    />
+    <link rel="stylesheet" href="components/score-creator/score-creator.component.css" />
+    <link rel="stylesheet" href="components/pin-creator/pin-creator.component.css" />
 
     <link rel="shortcut icon" href="favicon.ico" />
-
     <!-- Fonts -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> -->
 
@@ -46,29 +33,15 @@
     <!-- Begin page content -->
     <main role="main" class="container" ng-controller="myController">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-
         <li>
           <!-- <label for="files" class="form-control">Year:</label> -->
-          <select class="form-control"
-              ng-model="file"    
-              ng-change="loadYear()">
-              <option ng-repeat="file in files" value="{{file}}">{{file}}</option>
+          <select class="form-control" ng-model="file" ng-change="loadYear()">
+            <option ng-repeat="file in files" value="{{file}}">{{file}}</option>
           </select>
         </li>
 
         <li class="nav-item active" role="presentation">
-          <button
-            class="nav-link active"
-            id="score-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#score"
-            type="button"
-            role="tab"
-            aria-controls="score"
-            aria-selected="true"
-          >
-            Score
-          </button>
+          <button class="nav-link active" id="score-tab" data-bs-toggle="tab" data-bs-target="#score" type="button" role="tab" aria-controls="score" aria-selected="true">Score</button>
         </li>
         <li class="nav-item" role="presentation">
           <button
@@ -161,9 +134,9 @@
             <div class="row">
               <div class="col-lg-6">
                 <p>
-                  Max Score: <span><strong>{{maxScore}}</strong></span> |
-                  Min Score: <span><em>{{minScore}}</em></span> | Avg
-                  Score: <span>{{avgScore | roundTo: 0}}</span>
+                  Max Score: <span><strong>{{maxScore}}</strong></span> | Min
+                  Score: <span><em>{{minScore}}</em></span> | Avg Score:
+                  <span>{{avgScore | roundTo: 0}}</span>
                 </p>
               </div>
               <div class="col-lg-6">
@@ -184,7 +157,6 @@
             <div class="row justify-content-md-center">
               <scores scores="scores"></scores>
             </div>
-
           </div>
         </div>
 
@@ -217,7 +189,7 @@
                   | Splits: <strong>*</strong> <span>{{leagueSplits}}</span>
                 </p>
                 <!-- <p> -->
-                  <!-- Handicap Max:{{maxHandicap}} Min:{{minHandicap}} -->
+                <!-- Handicap Max:{{maxHandicap}} Min:{{minHandicap}} -->
                 <!-- </p> -->
               </div>
               <div class="col-lg-4">
@@ -289,12 +261,20 @@
                   width="200"
                   alt="All"
                 />
+                <img
+                  src="images/pins.jpg"
+                  class="rounded"
+                  height="200"
+                  width="200"
+                  alt="pins"
+                />
 
                 <ul>
                   <li>Pro Bowl £85 (included drilling)</li>
                   <li>Storm Double Bag £45</li>
                   <li>KR OPP Shoes £45</li>
                   <li>Cloth FREE</li>
+                  <li>Pins £1 each (10)</li>
                 </ul>
 
                 <p>
