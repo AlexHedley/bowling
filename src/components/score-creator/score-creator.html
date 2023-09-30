@@ -82,7 +82,7 @@
       </td>
       <td ng-if="$ctrl.isleague" rowspan="2" class="bb ts">
         <input id="isLeague" type="checkbox" checked />
-        <input id="total" type="text" maxlength="3" size="3" />
+        <input id="leagueTotal" type="text" maxlength="3" size="3" />
       </td>
     </tr>
 
@@ -179,6 +179,7 @@
       </td>
       <td class="bb ts">
         <input
+          id="total"
           type="text"
           oninput="$ctrl.numberOnly(this.id);"
           maxlength="3"
@@ -196,3 +197,5 @@
 <div id="Scores"></div>
 
 <button ng-click="$ctrl.copyScores()">Copy Scores</button>
+<br />
+<button ng-click="$ctrl.deleteScores()" style="background-color: red; color: white;">Delete Scores</button>

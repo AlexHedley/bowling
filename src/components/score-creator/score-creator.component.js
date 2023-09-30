@@ -112,11 +112,50 @@ function ScoreCreatorController() {
     navigator.clipboard.writeText(scores);
   }
 
+  function deleteScores() {
+    $('#1a').val('');
+    $('#1b').val('');
+    $('#1').val('');
+    $('#2a').val('');
+    $('#2b').val('');
+    $('#2').val('');
+    $('#3a').val('');
+    $('#3b').val('');
+    $('#3').val('');
+    $('#4a').val('');
+    $('#4b').val('');
+    $('#4').val('');
+    $('#5a').val('');
+    $('#5b').val('');
+    $('#5').val('');
+    $('#6a').val('');
+    $('#6b').val('');
+    $('#6').val('');
+    $('#7a').val('');
+    $('#7b').val('');
+    $('#7').val('');
+    $('#8a').val('');
+    $('#8b').val('');
+    $('#8').val('');
+    $('#9a').val('');
+    $('#9b').val('');
+    $('#9').val('');
+    $('#10a').val('');
+    $('#10b').val('');
+    $('#10c').val('');
+    $('#10').val('');
+
+    $('#hdp').val('');
+    $('#total').val('');
+    $('#leagueTotal').val('');
+  }
+
   this.getClass = getClass;
   this.trim = trim;
   this.numberOnly = numberOnly;
   this.getScores = getScores;
   this.copyScores = copyScores;
+  this.deleteScores = deleteScores;
 }
 angular.module('myApp').component('scoreCreator', {
   templateUrl: 'components/score-creator/score-creator.html',
