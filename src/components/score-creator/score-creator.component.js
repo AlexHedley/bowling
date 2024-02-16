@@ -163,6 +163,8 @@ function ScoreCreatorController() {
     $('#hdp').val('');
     $('#total').val('');
     $('#leagueTotal').val('');
+
+    $('#Scores').html('');
   }
 
   this.getClass = getClass;
