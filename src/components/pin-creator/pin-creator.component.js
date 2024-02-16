@@ -70,6 +70,6 @@ angular.module('myApp').component('pinCreator', {
   templateUrl: 'components/pin-creator/pin-creator.html',
   controller: PinCreatorController,
   bindings: {
-    id: '<',
+    pinId: '<',
   },
 });
