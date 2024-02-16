@@ -102,7 +102,7 @@ function ScoreCreatorController() {
       "league": ${isLeague},
       "hcp": ${hdp},
       "pins": []
-    }`;
+    },`;
 
     // "pins": [
     //   {
@@ -167,13 +167,20 @@ function ScoreCreatorController() {
     $('#Scores').html('');
   }
 
+  function updateSeriesTotal() {
+    var total = parseInt($('#10').val()) + parseInt($('#hdp').val());
+    $('#leagueTotal').val(total);
+  }
+
   this.getClass = getClass;
   this.trim = trim;
   this.numberOnly = numberOnly;
   this.getScores = getScores;
   this.copyScores = copyScores;
   this.deleteScores = deleteScores;
+  this.updateSeriesTotal = updateSeriesTotal;
 }
+
 angular.module('myApp').component('scoreCreator', {
   templateUrl: 'components/score-creator/score-creator.html',
   controller: ScoreCreatorController,
