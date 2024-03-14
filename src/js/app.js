@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['ui.indeterminate']);
 myApp.controller('myController', function ($scope, $http, $q, $filter) {
 
   $scope.file = ''; //'2023';
-  $scope.files = ['2023', '2022'];
+  $scope.files = ['2024', '2023', '2022'];
   
   $scope.scores = [];
   $scope.maxScore = 0;
