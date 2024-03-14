@@ -63,6 +63,11 @@ function ScoreCreatorController() {
 
     var isLeague = $('#isLeague').is(':checked');
     // var total = $('#total').val();
+    
+    // var includePins = $('#includePins').is(':checked');
+    // if (includePins) {
+    //   `"pins": []`;
+    // }
 
     var scores = `
     {
@@ -100,8 +105,7 @@ function ScoreCreatorController() {
       "Score10c": "${tenC}",
       "date": "${date}",
       "league": ${isLeague},
-      "hcp": ${hdp},
-      "pins": []
+      "hcp": ${hdp}
     },`;
 
     // "pins": [
