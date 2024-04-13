@@ -164,7 +164,7 @@ function ScoreCreatorController() {
     $('#10c').val('');
     $('#10').val('');
 
-    $('#hdp').val('');
+    // $('#hdp').val('');
     $('#total').val('');
     $('#leagueTotal').val('');
 
