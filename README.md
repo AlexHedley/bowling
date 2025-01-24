@@ -28,7 +28,9 @@
 
 `cd src`
 
-`py -m http.server`
+`py -m http.server -b 127.0.0.1`
+
+`cd src && py -m http.server -b 127.0.0.1`
 
 ## Docs
 
