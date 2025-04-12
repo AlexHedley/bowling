@@ -49,7 +49,7 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
   }
 
   getData = (file) => {
-    console.log(file);
+    // console.log(file);
     $http.get(file).then(function (response) {
       $scope.scores = response.data.item.filter((s) => s.league === false);
       $scope.leagueScores = response.data.item.filter((s) => s.league === true);

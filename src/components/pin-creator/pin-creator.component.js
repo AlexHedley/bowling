@@ -35,7 +35,7 @@ function PinCreatorController() {
 
     scores += "}";
 
-    console.log(scores);
+    // console.log(scores);
   }
 
   function getNumberFromSymbol(symbol) {
